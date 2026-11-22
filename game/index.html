@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMBER &amp; IVY — a card duel against the Ivy Warden</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- TITLE SCREEN -->
+  <section id="screen-title" class="screen">
+    <div class="crests"><span class="crest crest-ember">E</span><span class="vs">VS</span><span class="crest crest-ivy">I</span></div>
+    <h1 class="wordmark">EMBER <span class="amp">&amp;</span> IVY</h1>
+    <p class="tagline">An original card duel against the Ivy Warden. Its next move is always
+      telegraphed — your hand is the answer: block it, hex it down, out-heal it, or race it.</p>
+    <div id="title-fan" class="title-fan"></div>
+    <button id="btn-begin" class="big-btn">BEGIN THE DUEL</button>
+    <p id="best-line" class="best-line">Best Embers: —</p>
+    <p class="howto">Click a card to play it · Keys 1–5 play a card · Enter ends your turn · M mutes sound</p>
+  </section>
+
+  <!-- DUEL TABLE -->
+  <section id="screen-table" class="screen">
+    <div class="row warden-row">
+      <div id="warden-crest" class="crest crest-ivy big-crest">I</div>
+      <div class="row-main">
+        <div class="row-head"><span class="duelist-name">THE IVY WARDEN</span><span id="warden-ward" class="ward-chip">Ward —</span><span id="warden-hand" class="hand-count"></span></div>
+        <div id="warden-life"></div>
+        <div id="intent-banner" class="intent-banner"></div>
+      </div>
+    </div>
+
+    <div class="centre-felt">
+      <div id="centre-card" class="centre-card"></div>
+      <div class="centre-side">
+        <div id="duel-name" class="duel-name"></div>
+        <div id="score-line" class="score-line"></div>
+        <div id="log-line" class="log-line"></div>
+      </div>
+    </div>
+
+    <div class="row player-row">
+      <div id="player-crest" class="crest crest-ember big-crest">E</div>
+      <div class="row-main">
+        <div class="row-head"><span class="duelist-name">YOU — THE EMBER KEEPER</span><span id="player-ward" class="ward-chip">Ward —</span><span id="piles" class="hand-count"></span></div>
+        <div id="player-life"></div>
+        <div class="controls">
+          <div id="sun-pips" class="sun-pips"></div>
+          <button id="btn-end-turn" class="big-btn small">END TURN ⏎</button>
+          <button id="btn-mute" class="ghost-btn">SOUND: ON (M)</button>
+        </div>
+      </div>
+    </div>
+    <div id="hand" class="hand"></div>
+  </section>
+
+  <!-- VICTORY -->
+  <section id="screen-victory" class="screen">
+    <div class="crest crest-ivy big-crest crest-dead">I</div>
+    <h1 class="end-title gold">THE WARDEN FALLS</h1>
+    <p id="victory-text" class="end-text"></p>
+    <button id="btn-next-duel" class="big-btn">NEXT DUEL</button>
+  </section>
+
+  <!-- DEFEAT -->
+  <section id="screen-defeat" class="screen">
+    <div class="ivy-overgrowth" aria-hidden="true"></div>
+    <div class="crest crest-ember big-crest crest-dim">E</div>
+    <h1 class="end-title ivy">THE IVY TAKES YOU</h1>
+    <p id="defeat-text" class="end-text"></p>
+    <button id="btn-retry" class="big-btn">TRY AGAIN</button>
+    <button id="btn-title" class="ghost-btn">BACK TO TITLE</button>
+  </section>
+
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
